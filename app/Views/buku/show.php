@@ -12,7 +12,7 @@
         <div class="card p-4" style="width: fit-content;">
             <div class="d-sm-flex d-block align-items-center justify-content-between">
                 <div class="me-5">
-                    <img width="120" src="/uploads/covers/<?= $buku['cover'] ?? 'no_cover.png'; ?>" alt="image">
+                    <img class="border" width="120" src="/uploads/covers/<?= $buku['cover'] ?? 'no_cover.png'; ?>" alt="image">
                 </div>
                 <div>
                     <table>

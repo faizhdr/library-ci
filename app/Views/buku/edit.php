@@ -15,6 +15,7 @@
 
                     <div class="mb-3">
                         <label for="inputCover" class="form-label">Cover Buku</label>
+                        <input type="hidden" name="old_cover" value="<?= $buku['cover']; ?>">
                         <input type="file" name="cover" id="inputCover" class="form-control">
 
                         <?php if($buku['cover']): ?>

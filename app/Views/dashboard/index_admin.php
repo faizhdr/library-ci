@@ -114,12 +114,12 @@
                             <td>
                                 <form action="/dashboard_admin/update_status/<?= $item['pinjam_id']; ?>" method="post" class="d-inline">
                                     <input type="hidden" name="status" value="accepted">
-                                    <button type="submit" class="btn btn-success btn-sm">Accepted</button>
+                                    <button type="submit" class="btn btn-success btn-sm m-1">Accepted</button>
                                 </form>
 
                                 <form action="/dashboard_admin/update_status/<?= $item['pinjam_id']; ?>" method="post" class="d-inline">
                                     <input type="hidden" name="status" value="rejected">
-                                    <button type="submit" class="btn btn-danger btn-sm">Rejected</button>
+                                    <button type="submit" class="btn btn-danger btn-sm m-1">Rejected</button>
                                 </form>
                             </td>
                         </tr>

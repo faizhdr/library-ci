@@ -92,9 +92,12 @@ class BukuController extends BaseController
         }
 
         $fileCover = $this->request->getFile('cover');
-        $namaCover = $fileCover->isValid() && !$fileCover->hasMoved()
-            ? $fileCover->getRandomName()
-            : 'no_cover.png';
+        if ($fileCover->isValid() && !$fileCover->hasMoved()) {
+            $namaCover = $fileCover->getRandomName();
+            $fileCover->move('uploads/covers', $namaCover);
+        } else {
+            $namaCover = 'no_cover.png';
+        }
 
         // Simpan ke database jika valid
         $this->bukuModel->save([
@@ -182,8 +185,8 @@ class BukuController extends BaseController
 
         $fileCover = $this->request->getFile('cover');
         if ($fileCover && $fileCover->isValid() && !$fileCover->hasMoved()) {
-            // Hapus cover lama
-            if ($coverName && file_exists('uploads/covers/' . $coverName)) {
+            // Hapus cover lama, kecuali jika file lama adalah "no_cover.png"
+            if ($coverName && $coverName !== 'no_cover.png' && file_exists('uploads/covers/' . $coverName)) {
                 unlink('uploads/covers/' . $coverName);
             }
             // Upload cover baru

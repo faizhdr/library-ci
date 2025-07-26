@@ -23,7 +23,6 @@
                             <th>Penulis</th>
                             <th>Penerbit</th>
                             <th>Tahun terbit</th>
-                            <th>Deskripsi</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -32,17 +31,17 @@
                         <?php foreach($buku as $item): ?>
                         <tr>
                             <td><?= $i++; ?></td>
-                            <td><img src="/uploads/covers/<?= $item['cover'] ?? 'no_cover.png'; ?>" alt="cover" width="60"></td>
+                            <td>
+                                <img src="/uploads/covers/<?= $item['cover'] ?? 'no_cover.png'; ?>" alt="cover" width="60"></td>
                             <td><?= $item['judul']; ?></td>
                             <td><?= $item['nama_kategori']; ?></td>
                             <td><?= $item['penulis']; ?></td>
                             <td><?= $item['penerbit']; ?></td>
                             <td><?= $item['tahun_terbit']; ?></td>
-                            <td><?= $item['deskripsi']; ?></td>
                             <td>
-                                <a href="/buku/show/<?= $item['id']; ?>" class="btn btn-success btn-sm">View</a>
-                                <a href="/buku/edit/<?= $item['id']; ?>" class="btn btn-primary btn-sm">Edit</a>
-                                <a class="btn btn-danger btn-sm btn-delete" data-id="<?= $item['id']; ?>"> Hapus
+                                <a href="/buku/show/<?= $item['id']; ?>" class="btn btn-success btn-sm m-1"><i class="fa-solid fa-eye"></i></a>
+                                <a href="/buku/edit/<?= $item['id']; ?>" class="btn btn-primary btn-sm m-1"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a class="btn btn-danger btn-sm m-1 btn-delete" data-id="<?= $item['id']; ?>"> <i class="fa-solid fa-trash"></i>
                                 </a>
                             </td>
                         </tr>
